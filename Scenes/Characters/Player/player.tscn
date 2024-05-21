@@ -1,5 +1,6 @@
-[gd_scene load_steps=34 format=3 uid="uid://dq5fgifk52cae"]
+[gd_scene load_steps=35 format=3 uid="uid://dq5fgifk52cae"]
 
+[ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_n6nhv"]
 [ext_resource type="Texture2D" uid="uid://s6tm8wt3dx85" path="res://Assets/Sprites/Characters/Player/Running/Running_000.png" id="1_o6hjc"]
 [ext_resource type="Texture2D" uid="uid://d2rteqccbc8os" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_000.png" id="2_f706d"]
 [ext_resource type="Texture2D" uid="uid://c77d758jjthqo" path="res://Assets/Sprites/Characters/Player/Idle Blinking/Idle Blinking_001.png" id="3_f5uk1"]
@@ -71,7 +72,10 @@ _data = {
 "Move": SubResource("Animation_2thw5")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animationPlayer", "sprite3D")]
+script = ExtResource("1_n6nhv")
+animationPlayer = NodePath("AnimationPlayer")
+sprite3D = NodePath("Sprite3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_o6hjc")
